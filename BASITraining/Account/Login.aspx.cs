@@ -12,6 +12,8 @@ namespace BASITraining.Account
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            Session["previous"] = "previous";
+            Session["login"] = "previous";
             RegisterHyperLink.NavigateUrl = "Register";
             // Enable this once you have account confirmation enabled for password reset functionality
             //ForgotPasswordHyperLink.NavigateUrl = "Forgot";
@@ -38,7 +40,18 @@ namespace BASITraining.Account
                 switch (result)
                 {
                     case SignInStatus.Success:
-                        IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
+                        Session["a"] = "success";
+
+                        //if (Session["previous"] != null) { Response.Redirect("shoppingcart"); }
+                        // else if (Session["login"] != null)
+                        //  {
+
+                        //  Response.Redirect("Default.aspx");
+                        //   }
+                        //else
+                            IdentityHelper.RedirectToReturnUrl(Request.QueryString["ReturnUrl"], Response);
+
+
                         break;
                     case SignInStatus.LockedOut:
                         Response.Redirect("/Account/Lockout");

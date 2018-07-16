@@ -7,6 +7,10 @@ using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
+using System.Linq;
+using BASITraining.Models;
+using BASITraining.Logic;
+using BASITraining;
 
 namespace BASITraining
 {
@@ -69,12 +73,45 @@ namespace BASITraining
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
+        }
+        protected void Page_PreRender(object sender, EventArgs e)
+        {
+           
+         
+                using (ShoppingCartActions usersShoppingCart = new ShoppingCartActions())
+                {
+                    string cartStr = string.Format("Cart ({0})", usersShoppingCart.GetCount());
+                    cartCount.InnerText = cartStr;
+                }
+           
+        }
+        public IQueryable<category> GetCategories()
+        {
+            var _db = new BASITraining.Models.p_context();
+            IQueryable<category> query = _db.Categories;
+            return query;
         }
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
         {
+            Session["a"] = null;
+            shoppingcart s = new shoppingcart();
+            
+            s.delteCartItems();
+
             Context.GetOwinContext().Authentication.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+           
+        }
+
+        protected void categoryList_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void SqlDataSource1_Selecting(object sender, SqlDataSourceSelectingEventArgs e)
+        {
+
         }
     }
 

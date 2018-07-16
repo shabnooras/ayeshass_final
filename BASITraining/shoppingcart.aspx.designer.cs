@@ -10,51 +10,60 @@
 namespace BASITraining {
     
     
-    public partial class SiteMaster {
+    public partial class shoppingcart {
         
         /// <summary>
-        /// cartCount control.
+        /// ShoppingCartTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor cartCount;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl ShoppingCartTitle;
         
         /// <summary>
-        /// SqlDataSource1 control.
+        /// CartList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource SqlDataSource1;
+        protected global::System.Web.UI.WebControls.GridView CartList;
         
         /// <summary>
-        /// Image1 control.
+        /// Updatebutton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image1;
+        protected global::System.Web.UI.WebControls.Button Updatebutton;
         
         /// <summary>
-        /// categoryList control.
+        /// LabelTotalText control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView categoryList;
+        protected global::System.Web.UI.WebControls.Label LabelTotalText;
         
         /// <summary>
-        /// MainContent control.
+        /// lblTotal control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        protected global::System.Web.UI.WebControls.Label lblTotal;
+        
+        /// <summary>
+        /// CheckoutButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button CheckoutButton;
     }
 }
